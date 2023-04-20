@@ -1,6 +1,6 @@
 # Array Serialization
 
-[![Build](https://github.com/tuliren/nextjs-app-template/actions/workflows/build.yaml/badge.svg)](https://github.com/tuliren/nextjs-app-template/actions/workflows/build.yaml)
+[![Test](https://github.com/tuliren/array_serialization/actions/workflows/test.yaml/badge.svg)](https://github.com/tuliren/array_serialization/actions/workflows/test.yaml)
 
 ## Run test
 
