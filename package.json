@@ -10,8 +10,7 @@
     "script": "npx ts-node",
     "test": "jest --coverage"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@next/eslint-plugin-next": "^13.2.1",

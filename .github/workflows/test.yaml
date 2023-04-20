@@ -23,7 +23,6 @@ jobs:
           # but it is faster to include node_modules
           path: |
             ${{ github.workspace }}/node_modules
-            ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-node-16-${{ hashFiles('yarn.lock') }}
       - name: Install dependencies
         run: yarn install --frozen-lockfile

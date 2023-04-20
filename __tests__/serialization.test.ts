@@ -43,11 +43,27 @@ const testCases: TestCase[] = [
   },
   {
     name: 'header element delimiter',
-    input: [',', 'hel,lo', ',,,,', 'wo,r,,ld', 123, 456, [',', 'hel,lo', 'wor,ld', 123, 456]],
+    input: [
+      ',',
+      'hel,lo',
+      ',,,,',
+      'wo,r,,ld',
+      123,
+      456,
+      [',', 'hel,lo', 'wor,ld', 123, 456],
+    ],
   },
   {
     name: 'header content delimiter',
-    input: ['|', 'hel|lo', '||||', 'wo|r||ld', 123, 456, ['|', 'hel|lo', 'wor|ld', 123, 456]],
+    input: [
+      '|',
+      'hel|lo',
+      '||||',
+      'wo|r||ld',
+      123,
+      456,
+      ['|', 'hel|lo', 'wor|ld', 123, 456],
+    ],
   },
   {
     name: 'header element and content delimiter',

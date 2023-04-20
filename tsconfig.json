@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext", "es2017.object"],
+    "target": "es6",
+    "lib": ["esnext", "es2017.object"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -20,6 +20,6 @@
       "module": "CommonJS"
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.test.ts"],
+  "include": ["**/*.ts", "**/*.test.ts"],
   "exclude": ["node_modules"]
 }

@@ -11,7 +11,11 @@ import {
  * @param startPosition The start position of the element.
  * @param length The length of the serialized string element.
  */
-const deserializeStringElement = (input: string, startPosition: number, length: number): string => {
+const deserializeStringElement = (
+  input: string,
+  startPosition: number,
+  length: number
+): string => {
   return input.substring(startPosition, startPosition + length);
 };
 
@@ -20,7 +24,11 @@ const deserializeStringElement = (input: string, startPosition: number, length: 
  * @param startPosition The start position of the element.
  * @param length The length of the serialized string element.
  */
-const deserializeNumberElement = (input: string, startPosition: number, length: number): number => {
+const deserializeNumberElement = (
+  input: string,
+  startPosition: number,
+  length: number
+): number => {
   return parseFloat(input.substring(startPosition, startPosition + length));
 };
 
@@ -39,7 +47,10 @@ const deserializeArrayElement = (
   let cursor = startPosition;
   let startIndex = cursor;
 
-  while (input[cursor] !== HEADER_CONTENT_DELIMITER && cursor < cursor + length) {
+  while (
+    input[cursor] !== HEADER_CONTENT_DELIMITER &&
+    cursor < cursor + length
+  ) {
     while (
       input[cursor] !== HEADER_ELEMENT_DELIMITER &&
       input[cursor] !== HEADER_CONTENT_DELIMITER &&
@@ -62,16 +73,24 @@ const deserializeArrayElement = (
   for (const header of headers) {
     switch (header.type) {
       case ElementType.String:
-        output.push(deserializeStringElement(input, cursor + 1, header.contentLength));
+        output.push(
+          deserializeStringElement(input, cursor + 1, header.contentLength)
+        );
         cursor += header.contentLength;
         break;
       case ElementType.Number:
-        output.push(deserializeNumberElement(input, cursor + 1, header.contentLength));
+        output.push(
+          deserializeNumberElement(input, cursor + 1, header.contentLength)
+        );
         cursor += header.contentLength;
         break;
       case ElementType.Array:
         if (header.contentLength > 0) {
-          const array = deserializeArrayElement(input, cursor + 1, header.contentLength);
+          const array = deserializeArrayElement(
+            input,
+            cursor + 1,
+            header.contentLength
+          );
           output.push(array);
         }
         cursor += header.contentLength;

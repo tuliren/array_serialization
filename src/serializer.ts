@@ -1,4 +1,9 @@
-import { ElementType, HEADER_ELEMENT_DELIMITER, InputType, SerializationEntry } from './types';
+import {
+  ElementType,
+  HEADER_ELEMENT_DELIMITER,
+  InputType,
+  SerializationEntry,
+} from './types';
 
 /**
  * Serializes a string element.
@@ -58,7 +63,9 @@ const serializeArrayElement = (array: InputType[]): SerializationEntry => {
     contents.push(entry.content);
   }
 
-  const arrayContent = `${headers.join(HEADER_ELEMENT_DELIMITER)}|${contents.join('')}`;
+  const arrayContent = `${headers.join(
+    HEADER_ELEMENT_DELIMITER
+  )}|${contents.join('')}`;
   return {
     header: `${ElementType.Array}${arrayContent.length}`,
     content: arrayContent,
